@@ -1,3 +1,5 @@
+@Library('my-shared-lib') _
+
 pipeline{
     
     agent any
@@ -6,9 +8,10 @@ pipeline{
         stage('Git Checkout'){
             steps{
                 script{
-
-                    git 'https://github.com/SaurabhRohankar/ULTIMATE_CICD.git'
-
+                    gitCheckout(
+                    name:"master",
+                    url:"https://github.com/SaurabhRohankar/ULTIMATE_CICD.git"
+                    )
                     }
                 }
         }

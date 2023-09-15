@@ -16,3 +16,9 @@ sudo dnf install java-11-amazon-corretto -y
 sudo yum install jenkins -y
 sudo systemctl enable jenkins
 sudo systemctl start jenkins
+
+# adding docker to jenkins 
+sudo su -
+usermod -aG docker jenkins
+usermod -aG docker ec2-user
+systemctl restart docker

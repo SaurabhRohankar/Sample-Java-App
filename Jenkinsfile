@@ -1,17 +1,19 @@
 @Library('my-shared-lib') _
 
-pipeline{
-    
+pipeline {
     agent any
-    stages{
-
-        stage('Git Checkout'){
-            steps{
+    stages {
+        stage('Git Checkout') {
+            steps {
+                script {
+                    // Use correct syntax for gitCheckout
                     gitCheckout(
-                    name:"master",
-                    url:"https://github.com/SaurabhRohankar/ULTIMATE_CICD.git"
+                        branch: 'master',
+                        url: 'https://github.com/SaurabhRohankar/ULTIMATE_CICD.git'
                     )
                 }
+            }
         }
     }
 }
+

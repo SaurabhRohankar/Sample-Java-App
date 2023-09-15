@@ -17,6 +17,9 @@ sudo yum install jenkins -y
 sudo systemctl enable jenkins
 sudo systemctl start jenkins
 
+#installing git
+sudo yum install git -y
+
 # adding docker to jenkins 
 sudo su -
 usermod -aG docker jenkins
